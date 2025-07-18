@@ -7,7 +7,12 @@ from app.config import settings
 from app.tasks import gemini_response
 
 router = APIRouter()
-r = redis.Redis.from_url(settings.REDIS_URL)
+# r = redis.Redis.from_url(settings.REDIS_URL)
+r = redis.Redis.from_url(
+    settings.REDIS_URL,
+    ssl=True,
+    decode_responses=True  # optional, makes `r.get()` return strings instead of bytes
+)
 #Authorization common function
 def get_current_user(request: Request, db: Session = Depends(database.get_db)):
     auth_header = request.headers.get("Authorization")
