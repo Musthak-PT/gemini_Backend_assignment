@@ -41,7 +41,9 @@ A scalable backend system inspired by Google Gemini Chat, supporting:
 ### 🔧 Installation Steps
 
 # Clone the repo
-git clone https://github.com/yourusername/gemini-backend-clone.git
+create a folder
+git clone https://github.com/Musthak-PT/gemini_Backend_assignment.git
+
 cd gemini-backend-clone
 
 # Create virtualenv
