@@ -282,3 +282,29 @@ STRIPE_WEBHOOK_SECRET=whsec_your_stripe_webhook_secret
 GEMINI_API_KEY=your_gemini_api_key_here
 
 DATABASE_URL=postgresql://postgres:postgres@db:5432/gemini_db
+
+
+--------------------------------------------------------------------------------
+## 🔄 Stripe Webhook Setup (Local)
+
+To test Stripe webhooks in your local development environment, follow these steps:
+
+1. **Install the Stripe CLI**  
+   If you haven't already, download and install the Stripe CLI from the official documentation:  
+   👉 https://stripe.com/docs/stripe-cli
+
+2. **Start the webhook listener**  
+   Run the following command to listen for events and forward them to your deployed endpoint:
+
+   ```bash
+   stripe listen --forward-to https://gemini-backend-assignment.onrender.com/webhook/stripe
+
+
+3. **Copy the webhook secret**
+  After running the above command, the CLI will output a webhook signing secret (e.g., whsec_...).
+  Add this to your .env file:
+
+  STRIPE_WEBHOOK_SECRET=whsec_your_generated_secret_here
+
+4. **Use the secret in your backend**
+  Your backend should use this secret to verify the authenticity of incoming Stripe webhook events.
