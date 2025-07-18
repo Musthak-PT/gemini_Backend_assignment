@@ -48,9 +48,11 @@ cd gemini-backend-clone
 
 # Create virtualenv
 python -m venv venv
+
 source venv/bin/activate
 
 ## Start the Project
+
 docker-compose up --build
 
 # Install dependencies
