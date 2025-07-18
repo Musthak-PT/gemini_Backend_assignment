@@ -272,8 +272,13 @@ Response:
 Make sure to configure the following environment variables in your .env file:
 
 SECRET_KEY=supersecretkey
+
 REDIS_URL=redis://redis:6379
+
 STRIPE_SECRET_KEY=sk_test_your_stripe_secret_key
+
 STRIPE_WEBHOOK_SECRET=whsec_your_stripe_webhook_secret
+
 GEMINI_API_KEY=your_gemini_api_key_here
+
 DATABASE_URL=postgresql://postgres:postgres@db:5432/gemini_db
