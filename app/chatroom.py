@@ -10,8 +10,7 @@ router = APIRouter()
 # r = redis.Redis.from_url(settings.REDIS_URL)
 r = redis.Redis.from_url(
     settings.REDIS_URL,
-    ssl=True,
-    decode_responses=True  # optional, makes `r.get()` return strings instead of bytes
+    decode_responses=True
 )
 #Authorization common function
 def get_current_user(request: Request, db: Session = Depends(database.get_db)):
