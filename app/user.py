@@ -4,6 +4,7 @@ from app import schemas, models, utils, database
 from fastapi import Header
 
 router = APIRouter()
+
 #User me
 #Authorization : Bearer <token> ->this is the form of adding the authorization
 @router.get("/me", response_model=schemas.UserOut)
