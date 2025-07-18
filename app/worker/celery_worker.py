@@ -1,1 +1,0 @@
-from app.task.gemini_task import celery
